@@ -1,6 +1,8 @@
 
 // This is initialized in index.js
 
+// I added this to test github stuff
+
 /*
     Creating a background for the home page
     -final goal is to use surreal numbers in some way
