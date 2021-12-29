@@ -140,13 +140,13 @@ main section .content{
 }
 .words h1{
     font-size: 3rem;
-    color: purple;
+    color: rgba(0,0,0,.5);
 }
 .words p{
     text-transform: uppercase;
     font-size: 1rem;
     color: #fff;
-    text-shadow: 2px 2px 2px solid rgba(0,0,0,.3);
+    text-shadow: 2px 2px 2px solid rgba(0,0,0,.8);
 }
 
 /*  SECONDARY SECTION  */
