@@ -3,6 +3,9 @@ function addDesktopListeners(){
 
     const PrimaryContentContainer = document.querySelector('.primary-section .content');
     const CirclesContainer = document.querySelector('.circles-container');
+    const Circle1 = document.querySelector('.circle1');
+    const Circle2 = document.querySelector('.circle2');
+
 
 
     /*  Giving some slight 3d movement to the circles as the mouse moves around */
@@ -19,6 +22,27 @@ function addDesktopListeners(){
         CirclesContainer.style.transistion = 'all 500ms ease';
         CirclesContainer.style.transform = `rotateY(0deg) rotateX(0deg)`;
     });
+
+
+    addCircleEventListeners(Circle1,Circle2);
+}
+
+function addCircleEventListeners(...circles){
+    circles.forEach(circle=>{
+        circle.addEventListener('click', (ev)=>{
+            ev.target.classList.add('open');
+            addCloseCircleEventListeners(ev.target);
+        })
+    })
+}
+
+function addCloseCircleEventListeners(element){
+    document.querySelectorAll('.close-button').forEach(button =>{
+        button.addEventListener('click', (ev)=>{
+            element.classList.remove('open');
+            button.removeEventListener('click', addCloseCircleEventListeners);
+        });
+    })
 }
 
 function addMobileListeners(){

@@ -1,4 +1,5 @@
 :root{
+    --text-color1: #fff;
     --primary-color: #000;
     --secondary-color: #fff;
     --myColor: rgba(0,23,198,.5);
@@ -28,6 +29,7 @@
 html{
     font-family: sans-serif;
 }
+
 body{
     position: relative;
     min-height: 100vh;
@@ -42,9 +44,15 @@ header{
     height: 5rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
-
+header p{
+    color: var(--text-color1);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 2rem;
+}
 main{
     width: 100vw;
     perspective: 1000px;
@@ -61,13 +69,10 @@ main section .content{
     position: relative;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
 }
 
 /*  PRIMARY SECTION  */
-.primary-section .content:hover > .circles-container{
-    transform: rotate(45deg);
-}
+
 
 /*  LEFT COLUMN    */
 
@@ -87,31 +92,71 @@ main section .content{
     box-shadow: var(--circle-shadow);
     transition: all 500ms ease;
 }
-.circle.shadowReverse{
-    box-shadow: var(--circle-shadowReverse);
+
+.circle.open{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0%;
+}
+.circle .close-button{
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    transition: all 1s ease;
+}
+.circle.open .close-button{
+    opacity: 1;
+}
+.circle .close-button .bar{
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 33px;
+    height: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    transform-origin: center;
+}
+.bar1{
+    transform: translate(-50%, -50%) rotateZ(45deg);
+}
+.bar2{
+    transform: translate(-50%, -50%) rotateZ(-45deg);
 }
 .circle1{
     width: var(--c1Size);
     height: var(--c1Size);
     min-width: var(--c1maxSize);
     min-height: var(--c1maxSize);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
     transition: all 1s ease;
 }
-.circle1:hover{
-    width: calc(var(--c1Size) + 100vw / 2);
-    height: calc(var(--c1Size) + 100vw / 2);
+.circle p{
+    margin-bottom: 2rem;
+    color: var(--text-color1);
 }
 .circle2{
     width: var(--c2Size);
     height: var(--c2Size);
     min-width: var(--c2maxSize);
     min-height: var(--c2maxSize);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
     transition: all 1s ease;
 }
-.circle2:hover{
-    width: calc(var(--c2Size) + 100vw / 2);
-    height: calc(var(--c2Size) + 100vw / 2);
-}
+/* .circle2.open{
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0%;
+} */
 .circle3{
     width: var(--c3Size);
     height: var(--c3Size);
@@ -119,24 +164,13 @@ main section .content{
     min-height: var(--c3maxSize);
     transition: all 1s ease;
 }
-.circle3:hover{
-    width: calc(var(--c3Size) + 100vw / 2);
-    height: calc(var(--c3Size) + 100vw / 2);
-}
 
 /*  RIGHT COLUMN   */
 
 .words{
     position: absolute;
-    top: 50%; right: 0;
-    /* width: 50%; */
-    transform: translateY(-50%);
-    /* border: 1px solid yellow; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: calc(100vw * 0.1)
+    top: 5rem; right: 2rem;
+    text-align: right;
 }
 .words h1{
     font-size: 3rem;
