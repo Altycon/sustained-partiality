@@ -53,6 +53,15 @@ header p{
     text-transform: uppercase;
     margin: 0 2rem;
 }
+<<<<<<< HEAD
+=======
+header p{
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+>>>>>>> a1ae3ed4e678e9c12bdbb659b5ac71ff2dde86ef
 main{
     width: 100vw;
     perspective: 1000px;
