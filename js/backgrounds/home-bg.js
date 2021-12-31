@@ -24,7 +24,7 @@ function createCanvas(){
     canvas.style.top = '0';
     canvas.style.left = '0';
     canvas.style.zIndex = '-1';
-    document.body.appendChild(canvas);
+    document.body.insertBefore(canvas, document.querySelector('header'));
     return canvas;
 }
 

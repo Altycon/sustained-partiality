@@ -64,12 +64,14 @@ main{
 main section{
     width: 100vw;
     height: 100vh;
-    padding: 0 1rem;
+    
 }
 main section .content{
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 0 1rem;
+    border: 1px solid red;
 }
 
 /*  PRIMARY SECTION  */
@@ -80,14 +82,14 @@ main section .content{
 .circles-container{
     position: absolute;
     top: 0; left: 0;
-    width: 66vw;
+    width: 100vw;
     height: 100vh;
     transform-style: preserve-3d;
 }
 .circle{
     position: absolute;
     top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-80%,-50%);
     border-radius: 50%;
     background-image: var(--circle-bg-img);
     box-shadow: var(--circle-shadow);
@@ -98,6 +100,7 @@ main section .content{
     width: 100vw;
     height: 100vh;
     border-radius: 0%;
+    transform: translate(-50%,-50%);
 }
 .circle .close-button{
     position: absolute;
@@ -135,6 +138,7 @@ main section .content{
     align-items: center;
     justify-content: flex-end;
     cursor: pointer;
+    opacity: 1;
     transition: all 1s ease;
 }
 .circle p{
@@ -194,4 +198,10 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+/* utility classes */
+
+.circle.noOpacity{
+    opacity: 0;
 }
