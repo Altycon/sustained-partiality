@@ -1,9 +1,10 @@
 
-function rotateCircleContainer(ev){
-    let x = (window.innerWidth / 2- ev.pageX) / 50;
-    let y = (window.innerHeight / 2 - ev.pageY) / 50;
-    document.querySelector('.circles-container').style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
-}
+/*
+        Notes
+
+    -Should I keep the slight 3d movement listeners? The movement is clipping the circle element when opened.
+        Add and remove them maybe? But I can't figure that out correctly
+*/
 
 function addDesktopListeners(){
 
@@ -30,7 +31,11 @@ function addDesktopListeners(){
     addCircleEventListeners(Circle1,Circle2);
 }
 
-
+function rotateCircleContainer(ev){
+    let x = (window.innerWidth / 2- ev.pageX) / 50;
+    let y = (window.innerHeight / 2 - ev.pageY) / 50;
+    document.querySelector('.circles-container').style.transform = `rotateY(${x}deg) rotateX(${y}deg)`
+}
 
 function addCircleEventListeners(...circles){
     circles.forEach(circle=>{
