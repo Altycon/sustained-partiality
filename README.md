@@ -1,2 +1,2 @@
 # sustained-partiality
-Personal Portfollio Attempt
+Personal Portfolio Attempt
