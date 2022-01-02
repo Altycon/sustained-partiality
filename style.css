@@ -191,12 +191,33 @@ main section .content{
 }
 
 /*  SECONDARY SECTION  */
-.secondary-section .content p{
+.secondary-section .content h3{
     text-align: center;
     font-size: 3rem;
     padding-top: 5rem;
     font-weight: 900;
     color: yellow;
+    
+
+}
+.secondary-section .content p{
+    max-width: 300px;
+    text-align: center;
+    font-size: 1.33rem;
+    padding: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    line-height: 1.33;
+    margin: 0 auto;
+}
+.secondary-section .content a{
+    display: block;
+    text-align: center;
+    font-size: 1.33rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin: 0 auto;
 }
 /*  TERTIARY SECTION  */
 
