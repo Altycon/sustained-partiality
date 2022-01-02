@@ -14,13 +14,13 @@
                 inset -5px -5px 10px rgba(255,255,255,.5);
     /*  CIRCLE 1 / LARGEST  */
     --c1Size: calc(100vw / 2 - 1rem);
-    --c1maxSize: calc(100vw);
+    --c1minSize: 400px;
     /*  CIRCLE 2 / MEDIUM   */
     --c2Size: calc(100vw / 2.5 - 1rem);
-    --c2maxSize: calc(100vh * 0.33);
+    --c2minSize: calc(100vh * 0.33);
     /*  CIRCLE 3 / SMALLEST    */
     --c3Size: calc(100vw / 4 - 1rem);
-    --c3maxSize: calc(100vh * 0.20);
+    --c3minSize: calc(100vh * 0.20);
 }
 
 *{margin: 0;padding: 0;box-sizing: border-box;}
@@ -137,8 +137,8 @@ main section .content{
 .circle1{
     width: var(--c1Size);
     height: var(--c1Size);
-    min-width: var(--c1maxSize);
-    min-height: var(--c1maxSize);
+    min-width: var(--c1minSize);
+    min-height: var(--c1minSize);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,8 +151,8 @@ main section .content{
 .circle2{
     width: var(--c2Size);
     height: var(--c2Size);
-    min-width: var(--c2maxSize);
-    min-height: var(--c2maxSize);
+    min-width: var(--c2minSize);
+    min-height: var(--c2minSize);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,8 +163,8 @@ main section .content{
 .circle3{
     width: var(--c3Size);
     height: var(--c3Size);
-    min-width: var(--c3maxSize);
-    min-height: var(--c3maxSize);
+    min-width: var(--c3minSize);
+    min-height: var(--c3minSize);
     animation: pulsingCircle 3s ease-in-out infinite;
 }
 .circle p{
@@ -213,12 +213,12 @@ footer{
 
 @keyframes pulsingCircle {
     0%{
-        transform: translate(-80%,-50%) scale(1) rotate(-5deg);
+        transform: translate(-80%,-50%) scale(1) rotate(1deg);
     }
     50%{
-        transform: translate(-80%,-50%) scale(1.01) rotate(-3deg);
+        transform: translate(-80%,-50%) scale(1.01) rotate(0deg);
     }
     100%{
-        transform: translate(-80%,-50%) scale(1) rotate(-5deg);
+        transform: translate(-80%,-50%) scale(1) rotate(1deg);
     }
 }
