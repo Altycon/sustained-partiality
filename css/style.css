@@ -15,7 +15,7 @@
                 inset 5px 5px 10px rgba(255,255,255,.5);
     --circle-shadowReverse: 5px 5px 10px rgba(62, 75, 229, .5),
                 inset -5px -5px 10px rgba(255,255,255,.5);
-                
+
     /*  CIRCLE 1 / LARGEST  */
     --c1Size: calc(100vh * 0.9);
     /*  CIRCLE 2 / MEDIUM   */
@@ -54,6 +54,30 @@ main section .content{
     width: 100%;
     height: 100%;
     
+}
+main section .content h2{
+    color: var(--text-color1);
+    font-size: clamp(4rem, 10vw, 10rem);
+    width: 100%;
+    padding: 1rem;
+}
+main section .content .box{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    background-image: linear-gradient(-45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+    margin: 0 auto;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    top: 110%; left: 0;
+    width: 100%;
+    height: 5%;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.5);
+    filter: blur(3px);
 }
 footer{
     display: flex;
