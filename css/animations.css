@@ -1,0 +1,15 @@
+
+
+@keyframes pulsingCircle {
+    0%{
+        transform: translate(-80%,-50%) scale(1) rotate(1deg);
+    }
+    50%{
+        transform: translate(-80%,-50%) scale(1.01) rotate(0deg);
+    }
+    100%{
+        transform: translate(-80%,-50%) scale(1) rotate(1deg);
+    }
+}
+
+

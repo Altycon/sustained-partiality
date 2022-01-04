@@ -1,0 +1,61 @@
+
+/*     CIRCLES  */
+
+.circles-container{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+.circle{
+    cursor: pointer;
+    position: absolute;
+    top: 50%; left: 50%;
+    border-radius: 50%;
+    background-image: var(--circle-bg-img);
+    box-shadow: var(--circle-shadow);
+    transform: translate(-80%,-50%);
+    transition: all 1s ease;
+}
+.circle1{
+    width: var(--c1Size);
+    height: var(--c1Size);
+    
+    animation: pulsingCircle 3s ease-in-out 666ms infinite;
+}
+
+.circle2{
+    width: var(--c2Size);
+    height: var(--c2Size);
+    animation: pulsingCircle 3s ease-in-out 333ms infinite;
+}
+
+.circle3{
+    width: var(--c3Size);
+    height: var(--c3Size);
+    animation: pulsingCircle 3s ease-in-out infinite;
+}
+
+
+
+
+.words{
+    pointer-events: none;
+    position: relative;
+    width: 100vw;
+    text-align: right;
+    padding: 1rem;
+}
+.words h1{
+    font-size: clamp(2rem, 10vw, 4rem);
+    color: rgba(0,0,0,.5);
+    margin: 0 4rem;
+}
+.words p{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--text-color1);
+    text-shadow: 2px 2px 2px solid rgba(0,0,0,.8);
+    margin: 0 3rem;
+}

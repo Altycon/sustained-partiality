@@ -1,0 +1,65 @@
+
+/*  VARIABLES   */
+
+:root{
+    --text-color1: #fff;
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --myColor: rgba(0,23,198,.5);
+    --lightColorForGradient: rgba(193,199,244, 0.5);
+    --myGradient: linear-gradient(var(--myColor), var(--lightColorForGradient));
+
+    /*  CIRCLE STYLE    */
+    --circle-bg-img: radial-gradient(rgba(255,255,255,.5), rgba(62, 75, 229, .5));
+    --circle-shadow: -5px -5px 10px rgba(62, 75, 229, .5),
+                inset 5px 5px 10px rgba(255,255,255,.5);
+    --circle-shadowReverse: 5px 5px 10px rgba(62, 75, 229, .5),
+                inset -5px -5px 10px rgba(255,255,255,.5);
+                
+    /*  CIRCLE 1 / LARGEST  */
+    --c1Size: calc(100vh * 0.9);
+    /*  CIRCLE 2 / MEDIUM   */
+    --c2Size: calc(100vh * 0.6);
+    /*  CIRCLE 3 / SMALLEST    */
+    --c3Size: calc(100vh * 0.3);
+}
+
+/*  RESETS  */
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+*::before,*::after{margin: 0;padding: 0;box-sizing: border-box;}
+
+/*  SITEWIDE STYLES */
+
+html{
+    font-family: sans-serif;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    background-image: var(--myGradient);
+    overflow-x: hidden;
+    perspective: 1000px;
+}
+main{
+    width: 100vw;
+    
+}
+main section{
+    width: 100vw;
+    height: 100vh;
+    
+}
+main section .content{
+    width: 100%;
+    height: 100%;
+    
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
