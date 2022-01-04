@@ -5,8 +5,7 @@
     position: absolute;
     top: 0; left: 0;
     width: 100vw;
-    height: 100vh;
-    transform-style: preserve-3d;
+    height: 100vh;  
 }
 .circle{
     cursor: pointer;
@@ -15,7 +14,8 @@
     border-radius: 50%;
     background-image: var(--circle-bg-img);
     box-shadow: var(--circle-shadow);
-    transform: translate(-80%,-50%);
+    transform-style: preserve-3d;
+    transform: translate(-80%,-50%) scale(1) rotate(0deg);
     transition: all 1s ease;
 }
 .circle1{
@@ -37,11 +37,15 @@
     animation: pulsingCircle 3s ease-in-out infinite;
 }
 
-
+.circle.moveToCenter{
+    animation: moveToCenter 1.6s linear forwards;
+}
+.circle.moveBack{
+    animation: moveBack 1.6s;
+}
 
 
 .words{
-    pointer-events: none;
     position: relative;
     width: 100vw;
     text-align: right;
@@ -58,4 +62,5 @@
     color: var(--text-color1);
     text-shadow: 2px 2px 2px solid rgba(0,0,0,.8);
     margin: 0 3rem;
+    cursor: pointer;
 }
