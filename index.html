@@ -13,6 +13,9 @@
     <meta name="theme-color" content="#ffffff">
 
     <!--    STYLES  -->
+
+    <link rel="stylesheet" href="css/projects/calendar.css">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/primary.css">
@@ -20,11 +23,13 @@
     <link rel="stylesheet" href="css/tertiary.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    
 </head>
 <body>
     
     
-    <header>
+    <header class="primary-header">
         <p>Altycon</p>  
     </header>
 
@@ -61,10 +66,67 @@
 
             <div class="content">
                 <h2>Projects</h2>
-                <p>A non-working game</p>
-                <a href="https://altycon.github.io/aPongGame/">The Game</a>
-                
-                <div class="box"></div>
+
+                <!--    First Calendar Attempt  -->
+                <div class="calendar-container">
+                    <header class="calendar-header">
+
+                        <!--    MONTH DISPLAY   -->
+                        <div class="select-container">
+                            <button id="PreviousMonthButton" class="calendar-button" type="button"><</button>
+                            <div class="display-container">
+                                <p class="month-display active" value="0">January</p>
+                                <p class="month-display" value="1">Febuary</p>
+                                <p class="month-display" value="2">March</p>
+                                <p class="month-display" value="3">April</p>
+                                <p class="month-display" value="4">May</p>
+                                <p class="month-display" value="5">June</p>
+                                <p class="month-display" value="6">July</p>
+                                <p class="month-display" value="7">August</p>
+                                <p class="month-display" value="8">September</p>
+                                <p class="month-display" value="9">October</p>
+                                <p class="month-display" value="10">November</p>
+                                <p class="month-display" value="11">December</p>
+                            </div>
+                            <button id="NextMonthButton" class="calendar-button" type="button">></button>
+                        </div>
+            
+                        <!--    YEAR DISPLAY    -->
+                        <div class="select-container">
+                            <button id="PreviousYearButton" class="calendar-button" type="button"><</button>
+                            <div class="display-container">
+                                <p class="year-display">2022</p>
+                            </div>
+                            <button id="NextYearButton" class="calendar-button" type="button">></button>
+                        </div>
+            
+                    </header>
+                    <section class="calendar">
+                        <div class="weekday-container">
+                            <p class="weekday">SUN</p>
+                            <p class="weekday">MON</p>
+                            <p class="weekday">TUE</p>
+                            <p class="weekday">WED</p>
+                            <p class="weekday">THR</p>
+                            <p class="weekday">FRI</p>
+                            <p class="weekday">SAT</p>
+                        </div>
+                        <div class="month-container">
+                            <div class="january month active" data-month="0" data-title="January"></div>
+                            <div class="febuary month" data-month="1" data-title="Febuary"></div>
+                            <div class="march month" data-month="2" data-title="March"></div>
+                            <div class="april month" data-month="3" data-title="April"></div>
+                            <div class="may month" data-month="4" data-title="May"></div>
+                            <div class="june month" data-month="5" data-title="June"></div>
+                            <div class="july month" data-month="6" data-title="July"></div>
+                            <div class="august month" data-month="7" data-title="August"></div>
+                            <div class="september month" data-month="8" data-title="September"></div>
+                            <div class="october month" data-month="9" data-title="October"></div>
+                            <div class="november month" data-month="10" data-title="November"></div>
+                            <div class="december month" data-month="11" data-title="December"></div>
+                        </div>
+                    </section>
+                </div>
             </div>
 
         </section>
@@ -115,5 +177,7 @@
     <script src="js/backgrounds/home-bg.js"></script>
 
     <script src="js/index.js"></script>
+
+    <script src="js/projects/calendar.js"></script>
 </body>
 </html>

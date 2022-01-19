@@ -22,6 +22,27 @@
     --c2Size: calc(100vh * 0.6);
     /*  CIRCLE 3 / SMALLEST    */
     --c3Size: calc(100vh * 0.3);
+
+
+    --calendar-width: 100vw;
+    --calendar-height: 33vh;
+    --calendar-bg-color: none;
+    --calendar-border-color: rgba(255,255,255,1);
+    --calendar-font-type: sans-serif;
+    --calendar-font-size: clamp(5px, 2.5vw, 1rem);
+    --font-opacity: 1;
+    --calendar-font-color: rgba(0255,255,255,var(--font-opacity));
+    --calendar-margin: 0 auto;
+
+    --calendar-btn-color: var(--calendar-font-color);
+    --calendar-btn-hover-color: rgba(255,255,255,calc(var(--font-opacity) - 0.3));
+    --calendar-btn-bg-color: rgba(100,100,200,.3);
+
+    --calendar-prev-month-color: none;
+    --calendar-current-month-color: none;
+    --calendar-next-month-color: none;
+    --calendar-prev-next-font-color: rgba(255,255,255,calc(var(--font-opacity) - 0.5));
+    --calendar-prev-next-border-color: rgba(255,255,255,calc(var(--font-opacity) - 0.5));
 }
 
 /*  RESETS  */
@@ -45,23 +66,33 @@ main{
     width: 100vw;
     
 }
-main section{
+.primary-section{
     width: 100vw;
-    height: 100vh;
-    
+    height: 100vh;   
 }
-main section .content{
+.secondary-section,
+.tertiary-section,
+.quaternary-section{
+    width: 100vw;
+}
+.primary-section .content,
+.secondary-section .content,
+.tertiary-section .content,
+.quaternary-section .content{
     width: 100%;
     height: 100%;
     
 }
-main section .content h2{
+.primary-section .content h2,
+.secondary-section .content h2 ,
+.tertiary-section .content h2,
+.quaternary-section .content h2{
     color: var(--text-color1);
     font-size: clamp(4rem, 10vw, 10rem);
     width: 100%;
     padding: 1rem;
 }
-main section .content .box{
+.box{
     position: relative;
     width: 200px;
     height: 300px;

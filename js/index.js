@@ -13,5 +13,6 @@ function init(){
 
     addDesktopListeners()
     
+    calendarStart();
 }
 

@@ -1,0 +1,205 @@
+
+
+/*  CALENDAR   */
+
+
+.calendar-container{
+    position: relative;
+    width: var(--calendar-width);
+    height: 100%;
+    border: 1px solid var(--calendar-border-color);
+    margin: var(--calendar-margin);
+    background-color: var(--calendar-bg-color);
+    font-family: var(--calendar-font-type);
+    font-size: var(--calendar-font-size);
+    color: var(--calendar-font-color);
+    overflow: hidden;
+}
+
+/*  HEADER  */
+
+.calendar-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+.select-container{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+}
+.calendar-button{
+    color: var(--calendar-btn-color);
+    border: none;
+    background: var(--calendar-btn-bg-color);
+    font-size: 1rem;
+    transition: all 250ms ease;
+}
+.select-container button:hover{
+    color: var(--calendar-btn-hover-color);
+}
+.display-container{
+    position: relative;
+}
+
+.month-display{
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translate(-50%, -50%);
+    display: none;
+    pointer-events: none;
+    font-size: clamp(5px, 2.5vw, 1rem);
+}
+.month-display.active{
+    display: block;
+
+}
+.year-display{
+    width: max-content;
+    text-align: center;
+    font-size: clamp(5px, 2.5vw, 1rem);
+}
+
+
+
+
+
+/*  CALENDAR    */
+
+.calendar{
+    width: 100%;
+    height: 100%;
+}
+
+/*  WEEKDAYS    */
+
+.weekday-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    padding: 10px 0;
+}
+.weekday{
+    text-align: center;
+}
+/*  MONTHS  */
+
+.month-container{
+    position: relative;
+    width: 100%;
+    height: var(--calendar-height);
+    border: 1px solid var(--calendar-border-color);
+    overflow: hidden;
+}
+.month{
+    /* do not add width as it will add any padding or margin to elements */
+    position: absolute;
+    top:0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    grid-template-columns: repeat(7,1fr);
+    opacity: 0;
+}
+.month.active{
+    display: grid;
+    opacity: 1;
+}
+.month h2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(5px, 10vw, 10rem);
+    color: rgba(255,255,255,.3);
+    text-transform: uppercase;
+    pointer-events: none;
+}
+/*  DAYS    */
+.prev-m-day{
+    background-color: var(--calendar-prev-month-color);
+    border: 1px solid var(--calendar-prev-next-border-color);
+    color: var(--calendar-prev-next-font-color);
+    padding: 5px 0 0 5px;
+}
+.current-m-day{
+    background-color: var(--calendar-current-month-color);
+    border: 1px solid var(--calendar-border-color);
+    padding: 5px 0 0 5px;
+}
+.next-m-day{
+    background-color: var(--calendar-next-month-color);
+    border: 1px solid var(--calendar-prev-next-border-color);
+    color: var(--calendar-prev-next-font-color);
+    padding: 5px 0 0 5px;
+}
+#today{
+    background-color: rgba(100,100,255,.5);
+}
+.day{
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 250ms ease;
+}
+.day:hover{
+    transform: scale(1.05);
+    background-color: rgba(45,45,45,.5);
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+.day:active{
+    transform: scale(0.95);
+}
+/*  EVENTS  */
+
+/*  ANIMATIONS  */
+
+@keyframes moveRight {
+    from{
+        opacity: 0;
+        transform: translate(-80%, -50%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes moveLeft {
+    from{
+        opacity: 0;
+        transform: translate(-20%, -50%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes moveUp {
+    from{
+        opacity: 0;
+        transform: translateY(33px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes moveDown {
+    from{
+        opacity: 0;
+        transform: translateY(-33px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*  RESPONSIVE SIZING   */
+
+@media (max-width: 400px) {
+    :root{
+        /* --calendar-width: 100vw;
+        --calendar-height: 100vh; */
+    }
+}

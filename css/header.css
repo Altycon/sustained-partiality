@@ -1,6 +1,6 @@
 
 
-header{
+.primary-header{
     width: 100vw;
     height: calc(100vh / 3);
     background-image: linear-gradient(rgba(0,0,0,0.7), transparent);
