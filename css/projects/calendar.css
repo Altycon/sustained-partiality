@@ -196,9 +196,9 @@
 }
 /*  RESPONSIVE SIZING   */
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
     :root{
-        /* --calendar-width: 100vw;
-        --calendar-height: 100vh; */
+        --calendar-width: 100vw;
+        --calendar-height: 100vh;
     }
-}
+} */
