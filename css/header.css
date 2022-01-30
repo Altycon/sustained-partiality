@@ -5,7 +5,7 @@
     height: calc(100vh / 3);
     background-image: linear-gradient(rgba(0,0,0,0.7), transparent);
 }
-header p{
+.primary-header-titile{
     width: max-content;
     color: var(--text-color1);
     font-size: 1.5rem;

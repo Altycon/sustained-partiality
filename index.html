@@ -14,13 +14,14 @@
 
     <!--    STYLES  -->
 
-    <link rel="stylesheet" href="css/projects/calendar.css">
+    
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects/calendar.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/primary.css">
     <link rel="stylesheet" href="css/secondary.css">
-    <link rel="stylesheet" href="css/tertiary.css">
+    <!-- <link rel="stylesheet" href="css/tertiary.css"> -->
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
 
@@ -30,7 +31,7 @@
     
     
     <header class="primary-header">
-        <p>Altycon</p>  
+        <p class="primary-header-titile">Altycon</p>  
     </header>
 
     <main>
@@ -65,7 +66,7 @@
         <section class="secondary-section">
 
             <div class="content">
-                <h2>Projects</h2>
+                <h2>Calendar</h2>
 
                 <!--    First Calendar Attempt  -->
                 <div class="calendar-container">
@@ -75,6 +76,7 @@
                         <div class="select-container">
                             <button id="PreviousMonthButton" class="calendar-button" type="button"><</button>
                             <div class="display-container">
+                                <div class="size-holder-element"></div>
                                 <p class="month-display active" value="0">January</p>
                                 <p class="month-display" value="1">Febuary</p>
                                 <p class="month-display" value="2">March</p>
@@ -112,6 +114,7 @@
                             <p class="weekday">SAT</p>
                         </div>
                         <div class="month-container">
+                            
                             <div class="january month active" data-month="0" data-title="January"></div>
                             <div class="febuary month" data-month="1" data-title="Febuary"></div>
                             <div class="march month" data-month="2" data-title="March"></div>
@@ -136,9 +139,9 @@
         <section class="tertiary-section">
 
             <div class="content">
-                <h2>Story</h2>
+                <h2>Projects</h2>
     
-                <div class="box"></div>
+                
             </div>
 
         </section>

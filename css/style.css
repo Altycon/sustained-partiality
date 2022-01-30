@@ -24,9 +24,9 @@
     --c3Size: calc(100vh * 0.3);
 
 
-    --calendar-width: 100vw;
+    --calendar-width: 90vw;
     --calendar-height: 33vh;
-    --calendar-bg-color: none;
+    --calendar-bg-color: var(--myGradient);
     --calendar-border-color: rgba(255,255,255,1);
     --calendar-font-type: sans-serif;
     --calendar-font-size: clamp(5px, 2.5vw, 1rem);
