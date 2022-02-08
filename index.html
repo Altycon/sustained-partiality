@@ -14,7 +14,17 @@
 
     <!--    STYLES  -->
 
-    
+    <!--
+                                NOTES TO SELF
+
+            - There's a overflow issue on the body which I'm correcting by adding an overflow
+            hidden on the html element. Not sure if I should do this
+            - There's a clipping issue with the large circle animations.
+                -When scrolling the page down, clipping starts
+            -Also, there's multiple scroll bars showing up on the right side. Why?..Then fix.
+
+
+    -->
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/projects/calendar.css">
@@ -141,6 +151,7 @@
             <div class="content">
                 <h2>Projects</h2>
                 <div class="patterns-scroller">
+
                     <div class="patterns-display">
                         <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
                         <div class="button-container">
@@ -152,6 +163,7 @@
                             <canvas id="CanvasA2" class="canvas foreground-canvas"></canvas>
                         </div>
                     </div>
+
                     <div class="patterns-display">
                         <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
                         <div class="button-container">
@@ -163,13 +175,72 @@
                             <canvas id="CanvasB2" class="canvas foreground-canvas"></canvas>
                         </div>
                     </div>
-                    <div class="patterns-display"></div>
-                    <div class="patterns-display"></div>
-                    <div class="patterns-display"></div>
-                    <div class="patterns-display"></div>
-                    <div class="patterns-display"></div>
+
+                    <div class="patterns-display">
+                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
+                        <div class="button-container">
+                            <button id="StartButtonC" class="start-button button" type="button">Start</button>
+                            <button id="StopButtonC" class="stop-button button" type="button">Stop</button>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="CanvasC1" class="canvas background-canvas"></canvas>
+                            <canvas id="CanvasC2" class="canvas foreground-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="patterns-display">
+                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
+                        <div class="button-container">
+                            <button id="StartButtonD" class="start-button button" type="button">Start</button>
+                            <button id="StopButtonD" class="stop-button button" type="button">Stop</button>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="CanvasD1" class="canvas background-canvas"></canvas>
+                            <canvas id="CanvasD2" class="canvas foreground-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="patterns-display">
+                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
+                        <div class="button-container">
+                            <button id="StartButtonE" class="start-button button" type="button">Start</button>
+                            <button id="StopButtonE" class="stop-button button" type="button">Stop</button>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="CanvasE1" class="canvas background-canvas"></canvas>
+                            <canvas id="CanvasE2" class="canvas foreground-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="patterns-display">
+                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
+                        <div class="button-container">
+                            <button id="StartButtonF" class="start-button button" type="button">Start</button>
+                            <button id="StopButtonF" class="stop-button button" type="button">Stop</button>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="CanvasF1" class="canvas background-canvas"></canvas>
+                            <canvas id="CanvasF2" class="canvas foreground-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="patterns-display">
+                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
+                        <div class="button-container">
+                            <button id="StartButtonG" class="start-button button" type="button">Start</button>
+                            <button id="StopButtonG" class="stop-button button" type="button">Stop</button>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="CanvasG1" class="canvas background-canvas"></canvas>
+                            <canvas id="CanvasG2" class="canvas foreground-canvas"></canvas>
+                        </div>
+                    </div>
+                    
                 </div>
-                
+                <div class="patterns-scroller-navigation">
+                    <p><<<</p>
+                    <p>>>></p>
+                </div>
             </div>
 
         </section>

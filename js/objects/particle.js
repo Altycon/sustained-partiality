@@ -31,7 +31,7 @@ class Particle{
         return ( this.position.x < 0 || this.position.x > this.canvas.width)
     }
     createRandomVelocity(){
-        return new Vector(Math.random() < 0.5 ? -1 : 1, Math.random() < 0.5 ? -1 : 1);
+        return new Vector(randomRange(-2,2), randomRange(-2,2));
     }
 }
 

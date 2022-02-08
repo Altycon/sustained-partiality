@@ -11,7 +11,7 @@
 
 const HomeCanvas = createCanvas();
 const HomeCtx = HomeCanvas.getContext('2d');
-let Particles = createParticleArray(HomeCanvas,800);
+let Particles = createParticleArray(HomeCanvas,100);
 
 
 let HomeAnimationRequest;

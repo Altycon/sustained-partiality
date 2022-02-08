@@ -4,6 +4,9 @@
 
     -Should I keep the slight 3d movement listeners? The movement is clipping the circle target when opened.
         Add and remove them maybe? But I can't figure that out correctly
+
+    -Change the entrie site primary background colors based on the time of day?
+        -get the time/date and use the numbers to create a color
 */
 
 function addDesktopListeners(){
