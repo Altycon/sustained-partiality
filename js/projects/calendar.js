@@ -8,7 +8,11 @@ const PreviousYearButton = document.getElementById('PreviousYearButton');
 const NextYearButton = document.getElementById('NextYearButton');
 
 const MonthArray = ["January", "Febuary", "March", "April", "May",
-"June", "Junly", "August", "September", "October", "November", "December"]
+"June", "Junly", "August", "September", "October", "November", "December"];
+
+function setCalendar(){
+    // need to set the calendar to the current day before calendar is filled
+}
 
 function removeDays(){
     const Months = document.querySelectorAll('.month');

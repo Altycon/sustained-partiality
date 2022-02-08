@@ -1,9 +1,24 @@
 
-@media only screen and (max-width: 320px){
+
+
+@media only screen and (max-width: 760px){
     /*  STYLES  */
+    :root{
+        --calendar-width: 90vw;
+        --calendar-height: 66vh;
+    }
+    .simulation-display{
+        border: 1px solid blue;
+        width: 100%;
+        height: 100%;
+    }
 }
 @media only screen and (max-width: 480px){
     /*  STYLES  */
+    :root{
+        --calendar-width: 90vw;
+        --calendar-height: 33vh;
+    }
     .words{
         display: flex;
         flex-direction: column;
@@ -16,7 +31,12 @@
     .words p{
         margin: 0;
     }
+    .simulation-display{
+        border: 1px solid blue;
+        width: 100%;
+        height: 100%;
+    }
 }
-@media only screen and (max-width: 760px){
+@media only screen and (max-width: 320px){
     /*  STYLES  */
 }
