@@ -13,9 +13,9 @@
     color: var(--text-color1);
     border-radius: 10px;
 }
-.patterns-display{
+/* .patterns-display{
     
-}
+} */
 .patterns-description{
     font-size: var(--pattern-scroller-fontSize);
     font-weight: 500;
