@@ -9,12 +9,7 @@
         -get the time/date and use the numbers to create a color
 */
 
-function addDesktopListeners(){
 
-    
-
-    addCircleEventListeners();
-}
 
 
 function addCircleEventListeners(){

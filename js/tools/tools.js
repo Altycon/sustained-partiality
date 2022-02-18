@@ -9,12 +9,8 @@ let NumberArray2 = Array.from({ length: 10 }, (_, i) => i);
 //Array(10) [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
 
-function getRandomInt(max){
-    return Math.floor(Math.random()*max);
-}
-
-function randomRange(min,max){
-    return Math.random() * (max - min) + min;
+function randomRange(min,max,bool){
+    return bool ? Math.floor(Math.random() * (max - min) + min):Math.random() * (max - min) + min;
 }
 
 /*

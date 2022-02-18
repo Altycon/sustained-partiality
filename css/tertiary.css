@@ -38,6 +38,7 @@
     border-radius: 50%;
     color: var(--text-color1);
     font-size: var(--pattern-scroller-fontSize);
+    cursor: pointer;
 }
 .canvas-container{
     position: relative;
@@ -57,6 +58,7 @@
 }
 .foreground-canvas{
     background-color: transparent;
+    transform-origin: center;
 }
 
 .patterns-scroller-navigation{
@@ -68,3 +70,72 @@
     color: var(--text-color1);
     padding: 1rem;
 }
+
+@keyframes rotateBackAndForth {
+    0%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(0deg);
+    }
+    50%{
+        border: 1px solid hsl(0 100% 100% / 1);
+        transform: rotate(10deg);
+    }
+    100%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(0deg);
+    }
+}
+@keyframes rotatedAndTranslateY {
+    0%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(10deg) translateY(0px);
+    }
+    25%{
+        border: 1px solid hsl(0 100% 100% / 1);
+        transform: rotate(10deg) translateY(10px);
+    }
+    50%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(10deg) translateY(0px);
+    }
+    75%{
+        border: 1px solid hsl(0 100% 100% / 1);
+        transform: rotate(10deg) translateY(-10px)
+    }
+    100%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(10deg) translateY(0px)
+    }
+}
+@keyframes rotatedAndTranslateX {
+    0%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(10deg) translateX(0px);
+    }
+    25%{
+        border: 1px solid hsl(0 100% 100% / 1);
+        transform: rotate(10deg) translateX(10px);
+    }
+    50%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(10deg) translateX(0px);
+    }
+    75%{
+        border: 1px solid hsl(0 100% 100% / 1);
+        transform: rotate(10deg) translateX(-10px)
+    }
+    100%{
+        border: 1px solid hsl(0 100% 100% / 0);
+        transform: rotate(10deg) translateX(0px)
+    }
+}
+
+/*
+    - rotate and translateY
+    - rotate and translateX
+
+
+    - triangle animation
+    - square animation
+
+*?
