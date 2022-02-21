@@ -1,0 +1,22 @@
+
+.stars-page{
+    display: none;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+#StarFieldCanvas{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+#SunCanvas{
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: hsl(30 100% 50%);
+}

@@ -16,247 +16,251 @@
 
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/projects/calendar.css">
+    <link rel="stylesheet" href="css/projects/starfield.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/primary.css">
     <link rel="stylesheet" href="css/secondary.css">
     <link rel="stylesheet" href="css/tertiary.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
-
+    <link rel="stylesheet" href="css/projects/calendar.css">
     
 </head>
 <body>
+
+    <div class="stars-page">
+        <canvas id="StarFieldCanvas"></canvas>
+        <canvas id="SunCanvas"></canvas>
+    </div>
     
+    <div class="page-wrapper">
+        <header class="primary-header">
+            <p class="primary-header-titile">Altycon</p>  
+        </header>
+
+        <main>
+
+            <!--    PRIMARY     -->
+
+            <section class="primary-section">
+                <div class="content">
+
+                    <div class="circles-container">
+
+                        <!-- CIRCLES -->
+
+                        <div class="circle circle1" data-active="false"></div>
+                        <div class="circle circle2" data-active="false"></div>
+                        <div class="circle circle3" data-active="false"></div>
+                        
+                    </div>
+
+                    <div class="words">
+                        <h1>Sustained Partiality</h1>
+                        <p>Under construction</p>
+                    </div>
+
+                </div>
+                
+
+            </section>
+
+            <!--    SECONDARY     -->
+
+            <section class="secondary-section">
+
+                <div class="content">
+                    <h2>Calendar</h2>
+
+                    <!--    First Calendar Attempt  -->
+                    <div class="calendar-container">
+                        <header class="calendar-header">
+
+                            <!--    MONTH DISPLAY   -->
+                            <div class="select-container">
+                                <button id="PreviousMonthButton" class="calendar-button" type="button"><</button>
+                                <div class="display-container">
+                                    <div class="size-holder-element"></div>
+                                    <p class="month-display active" value="0">January</p>
+                                    <p class="month-display" value="1">Febuary</p>
+                                    <p class="month-display" value="2">March</p>
+                                    <p class="month-display" value="3">April</p>
+                                    <p class="month-display" value="4">May</p>
+                                    <p class="month-display" value="5">June</p>
+                                    <p class="month-display" value="6">July</p>
+                                    <p class="month-display" value="7">August</p>
+                                    <p class="month-display" value="8">September</p>
+                                    <p class="month-display" value="9">October</p>
+                                    <p class="month-display" value="10">November</p>
+                                    <p class="month-display" value="11">December</p>
+                                </div>
+                                <button id="NextMonthButton" class="calendar-button" type="button">></button>
+                            </div>
+                
+                            <!--    YEAR DISPLAY    -->
+                            <div class="select-container">
+                                <button id="PreviousYearButton" class="calendar-button" type="button"><</button>
+                                <div class="display-container">
+                                    <p class="year-display">2022</p>
+                                </div>
+                                <button id="NextYearButton" class="calendar-button" type="button">></button>
+                            </div>
+                
+                        </header>
+                        <section class="calendar">
+                            <div class="weekday-container">
+                                <p class="weekday">SUN</p>
+                                <p class="weekday">MON</p>
+                                <p class="weekday">TUE</p>
+                                <p class="weekday">WED</p>
+                                <p class="weekday">THR</p>
+                                <p class="weekday">FRI</p>
+                                <p class="weekday">SAT</p>
+                            </div>
+                            <div class="month-container">
+                                
+                                <div class="january month active" data-month="0" data-title="January"></div>
+                                <div class="febuary month" data-month="1" data-title="Febuary"></div>
+                                <div class="march month" data-month="2" data-title="March"></div>
+                                <div class="april month" data-month="3" data-title="April"></div>
+                                <div class="may month" data-month="4" data-title="May"></div>
+                                <div class="june month" data-month="5" data-title="June"></div>
+                                <div class="july month" data-month="6" data-title="July"></div>
+                                <div class="august month" data-month="7" data-title="August"></div>
+                                <div class="september month" data-month="8" data-title="September"></div>
+                                <div class="october month" data-month="9" data-title="October"></div>
+                                <div class="november month" data-month="10" data-title="November"></div>
+                                <div class="december month" data-month="11" data-title="December"></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+            </section>
+
+            <!--    TERTIARY     -->
+
+            <section class="tertiary-section">
+
+                <div class="content">
+                    <h2>Projects</h2>
+                    <div class="patterns-scroller">
+
+                        <div class="patterns-display">
+                            <h3 class="patterns-description">Random points placed identically on a two demensional surfaces. The foreground surface is rotating back and forth 10 degrees creating a circular pattern.</h3>
+                            <div class="button-container">
+                                <button id="StartButtonA" class="start-button button" type="button" data-value="A">Start</button>
+                                <button id="StopButtonA" class="stop-button button" type="button" data-value="A">Stop</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="CanvasA1" class="canvas background-canvas" data-value="A"></canvas>
+                                <canvas id="CanvasA2" class="canvas foreground-canvas" data-value="A"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="patterns-display">
+                            <h3 class="patterns-description">Here, the foreground surface is moving down and up yet the circular pattern moves from left to right.</h3>
+                            <div class="button-container">
+                                <button id="StartButtonB" class="start-button button" type="button" data-value="B">Start</button>
+                                <button id="StopButtonB" class="stop-button button" type="button" data-value="B">Stop</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="CanvasB1" class="canvas background-canvas" data-value="B"></canvas>
+                                <canvas id="CanvasB2" class="canvas foreground-canvas" data-value="B"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="patterns-display">
+                            <h3 class="patterns-description">Here, the foreground surface is moving from right to left yet the circular pattern is moving down and up.</h3>
+                            <div class="button-container">
+                                <button id="StartButtonC" class="start-button button" type="button" data-value="C">Start</button>
+                                <button id="StopButtonC" class="stop-button button" type="button" data-value="C">Stop</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="CanvasC1" class="canvas background-canvas" data-value="C"></canvas>
+                                <canvas id="CanvasC2" class="canvas foreground-canvas" data-value="C"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="patterns-display">
+                            <h3 class="patterns-description">Interestingly, if either of the surfaces are scaled to approx. 96% of the original size, a spiral pattern appears.</h3>
+                            <div class="button-container">
+                                <button id="StartButtonD" class="start-button button" type="button" data-value="D">Start</button>
+                                <button id="StopButtonD" class="stop-button button" type="button" data-value="D">Stop</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="CanvasD1" class="canvas background-canvas" data-value="D"></canvas>
+                                <canvas id="CanvasD2" class="canvas foreground-canvas" data-value="D"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="patterns-display">
+                            <h3 class="patterns-description">Scaled down, rotated, and moving.</h3>
+                            <div class="button-container">
+                                <button id="StartButtonE" class="start-button button" type="button" data-value="E">Start</button>
+                                <button id="StopButtonE" class="stop-button button" type="button" data-value="E">Stop</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="CanvasE1" class="canvas background-canvas" data-value="E"></canvas>
+                                <canvas id="CanvasE2" class="canvas foreground-canvas" data-value="E"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="patterns-display">
+                            <h3 class="patterns-description">Rotating a grid of squares</h3>
+                            <div class="button-container">
+                                <button id="StartButtonF" class="start-button button" type="button" data-value="F">Start</button>
+                                <button id="StopButtonF" class="stop-button button" type="button" data-value="F">Stop</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="CanvasF1" class="canvas background-canvas" data-value="F"></canvas>
+                                <canvas id="CanvasF2" class="canvas foreground-canvas" data-value="F"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="patterns-display">
+                            <h3 class="patterns-description">Rotating a grid of triangles</h3>
+                            <div class="button-container">
+                                <button id="StartButtonG" class="start-button button" type="button" data-value="G">Start</button>
+                                <button id="StopButtonG" class="stop-button button" type="button" data-value="G">Stop</button>
+                            </div>
+                            <div class="canvas-container">
+                                <canvas id="CanvasG1" class="canvas background-canvas" data-value="G"></canvas>
+                                <canvas id="CanvasG2" class="canvas foreground-canvas" data-value="G"></canvas>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="patterns-scroller-navigation">
+                        <p><<<</p>
+                        <p>>>></p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!--    QUATERNARY     -->
+
+            <section class="quaternary-section">
+
+                <div class="content">
+                    <h2>Game of Life</h2>
+
+                    <div class="box" style="text-align: center;padding-top:1rem;">NEXT THING</div>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>&copy; 2021</p>
+            <p>Clayton McDaniel</p>
+        </footer>
+    </div>
+
     
-    <header class="primary-header">
-        <p class="primary-header-titile">Altycon</p>  
-    </header>
-
-    <main>
-
-        <!--    PRIMARY     -->
-
-        <section class="primary-section">
-            <div class="content">
-
-                <div class="circles-container">
-
-                    <!-- CIRCLES -->
-
-                    <div class="circle circle1" data-active="false"></div>
-                    <div class="circle circle2" data-active="false"></div>
-                    <div class="circle circle3" data-active="false"></div>
-                    
-                </div>
-
-                <div class="words">
-                    <h1>Sustained Partiality</h1>
-                    <p>Under construction</p>
-                </div>
-
-            </div>
-            
-
-        </section>
-
-        <!--    SECONDARY     -->
-
-        <section class="secondary-section">
-
-            <div class="content">
-                <h2>Calendar</h2>
-
-                <!--    First Calendar Attempt  -->
-                <div class="calendar-container">
-                    <header class="calendar-header">
-
-                        <!--    MONTH DISPLAY   -->
-                        <div class="select-container">
-                            <button id="PreviousMonthButton" class="calendar-button" type="button"><</button>
-                            <div class="display-container">
-                                <div class="size-holder-element"></div>
-                                <p class="month-display active" value="0">January</p>
-                                <p class="month-display" value="1">Febuary</p>
-                                <p class="month-display" value="2">March</p>
-                                <p class="month-display" value="3">April</p>
-                                <p class="month-display" value="4">May</p>
-                                <p class="month-display" value="5">June</p>
-                                <p class="month-display" value="6">July</p>
-                                <p class="month-display" value="7">August</p>
-                                <p class="month-display" value="8">September</p>
-                                <p class="month-display" value="9">October</p>
-                                <p class="month-display" value="10">November</p>
-                                <p class="month-display" value="11">December</p>
-                            </div>
-                            <button id="NextMonthButton" class="calendar-button" type="button">></button>
-                        </div>
-            
-                        <!--    YEAR DISPLAY    -->
-                        <div class="select-container">
-                            <button id="PreviousYearButton" class="calendar-button" type="button"><</button>
-                            <div class="display-container">
-                                <p class="year-display">2022</p>
-                            </div>
-                            <button id="NextYearButton" class="calendar-button" type="button">></button>
-                        </div>
-            
-                    </header>
-                    <section class="calendar">
-                        <div class="weekday-container">
-                            <p class="weekday">SUN</p>
-                            <p class="weekday">MON</p>
-                            <p class="weekday">TUE</p>
-                            <p class="weekday">WED</p>
-                            <p class="weekday">THR</p>
-                            <p class="weekday">FRI</p>
-                            <p class="weekday">SAT</p>
-                        </div>
-                        <div class="month-container">
-                            
-                            <div class="january month active" data-month="0" data-title="January"></div>
-                            <div class="febuary month" data-month="1" data-title="Febuary"></div>
-                            <div class="march month" data-month="2" data-title="March"></div>
-                            <div class="april month" data-month="3" data-title="April"></div>
-                            <div class="may month" data-month="4" data-title="May"></div>
-                            <div class="june month" data-month="5" data-title="June"></div>
-                            <div class="july month" data-month="6" data-title="July"></div>
-                            <div class="august month" data-month="7" data-title="August"></div>
-                            <div class="september month" data-month="8" data-title="September"></div>
-                            <div class="october month" data-month="9" data-title="October"></div>
-                            <div class="november month" data-month="10" data-title="November"></div>
-                            <div class="december month" data-month="11" data-title="December"></div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-
-        </section>
-
-        <!--    TERTIARY     -->
-
-        <section class="tertiary-section">
-
-            <div class="content">
-                <h2>Projects</h2>
-                <div class="patterns-scroller">
-
-                    <div class="patterns-display">
-                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
-                        <div class="button-container">
-                            <button id="StartButtonA" class="start-button button" type="button" data-value="A">Start</button>
-                            <button id="StopButtonA" class="stop-button button" type="button" data-value="A">Stop</button>
-                        </div>
-                        <div class="canvas-container">
-                            <canvas id="CanvasA1" class="canvas background-canvas" data-value="A"></canvas>
-                            <canvas id="CanvasA2" class="canvas foreground-canvas" data-value="A"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="patterns-display">
-                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
-                        <div class="button-container">
-                            <button id="StartButtonB" class="start-button button" type="button" data-value="B">Start</button>
-                            <button id="StopButtonB" class="stop-button button" type="button" data-value="B">Stop</button>
-                        </div>
-                        <div class="canvas-container">
-                            <canvas id="CanvasB1" class="canvas background-canvas" data-value="B"></canvas>
-                            <canvas id="CanvasB2" class="canvas foreground-canvas" data-value="B"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="patterns-display">
-                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
-                        <div class="button-container">
-                            <button id="StartButtonC" class="start-button button" type="button" data-value="C">Start</button>
-                            <button id="StopButtonC" class="stop-button button" type="button" data-value="C">Stop</button>
-                        </div>
-                        <div class="canvas-container">
-                            <canvas id="CanvasC1" class="canvas background-canvas" data-value="C"></canvas>
-                            <canvas id="CanvasC2" class="canvas foreground-canvas" data-value="C"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="patterns-display">
-                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
-                        <div class="button-container">
-                            <button id="StartButtonD" class="start-button button" type="button" data-value="D">Start</button>
-                            <button id="StopButtonD" class="stop-button button" type="button" data-value="D">Stop</button>
-                        </div>
-                        <div class="canvas-container">
-                            <canvas id="CanvasD1" class="canvas background-canvas" data-value="D"></canvas>
-                            <canvas id="CanvasD2" class="canvas foreground-canvas" data-value="D"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="patterns-display">
-                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
-                        <div class="button-container">
-                            <button id="StartButtonE" class="start-button button" type="button" data-value="E">Start</button>
-                            <button id="StopButtonE" class="stop-button button" type="button" data-value="E">Stop</button>
-                        </div>
-                        <div class="canvas-container">
-                            <canvas id="CanvasE1" class="canvas background-canvas" data-value="E"></canvas>
-                            <canvas id="CanvasE2" class="canvas foreground-canvas" data-value="E"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="patterns-display">
-                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
-                        <div class="button-container">
-                            <button id="StartButtonF" class="start-button button" type="button" data-value="F">Start</button>
-                            <button id="StopButtonF" class="stop-button button" type="button" data-value="F">Stop</button>
-                        </div>
-                        <div class="canvas-container">
-                            <canvas id="CanvasF1" class="canvas background-canvas" data-value="F"></canvas>
-                            <canvas id="CanvasF2" class="canvas foreground-canvas" data-value="F"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="patterns-display">
-                        <h3 class="patterns-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, cupiditate.</h3>
-                        <div class="button-container">
-                            <button id="StartButtonG" class="start-button button" type="button" data-value="G">Start</button>
-                            <button id="StopButtonG" class="stop-button button" type="button" data-value="G">Stop</button>
-                        </div>
-                        <div class="canvas-container">
-                            <canvas id="CanvasG1" class="canvas background-canvas" data-value="G"></canvas>
-                            <canvas id="CanvasG2" class="canvas foreground-canvas" data-value="G"></canvas>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="patterns-scroller-navigation">
-                    <p><<<</p>
-                    <p>>>></p>
-                </div>
-            </div>
-
-        </section>
-
-        <!--    QUATERNARY     -->
-
-        <section class="quaternary-section">
-
-            <div class="content">
-                <h2>Game of Life</h2>
-
-                <div class="box" style="text-align: center;padding-top:1rem;">NEXT THING</div>
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-        <p>&copy; 2021</p>
-        <p>Clayton McDaniel</p>
-    </footer>
-
-
-
-
 
     <script src="js/tools/tools.js"></script>
     <script src="js/tools/vector.js"></script>

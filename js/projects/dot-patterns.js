@@ -69,10 +69,10 @@ const attachStartButtonListeners = (buttons)=> {
                     foregroundCanvas.style.animation = `rotatedAndTranslateX 5s linear infinite`;
                     break;
                 case "D":
-                    animationNA(backCTX);
+                    foregroundCanvas.style.animation = `scaleRotation 5s linear infinite`;
                     break;
                 case "E":
-                    animationNA(backCTX);
+                    foregroundCanvas.style.animation = `scaledRotatedTranslated 10s linear infinite`;
                     break;
                 case "F":
                     animationNA(backCTX);

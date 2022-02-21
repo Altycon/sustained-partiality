@@ -64,6 +64,9 @@ body{
     overflow-x: hidden;
     perspective: 1000px;
 }
+.page-wrapper{
+    display: block;
+}
 main{
     width: 100vw;
     
@@ -113,10 +116,8 @@ main{
     filter: blur(3px);
 }
 footer{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-
-
-
