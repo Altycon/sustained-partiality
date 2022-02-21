@@ -32,18 +32,18 @@
         margin: 0;
     }
     .patterns-scroller{
-        --pattern-scroller-spacing: 0.5rem;
+        --pattern-scroller-spacing: 2rem;
         /* --pattern-scroller-fontSize: 0.8rem; */
         grid-auto-columns: 100%;
         width: 90vw;
-        height: 90vw;
+        height: 60vh;
     }
     .button-container{
         margin-bottom: 1rem;
     }
     .canvas-container{
-        width: 50vw;
-        height: 50vw;
+        width: 205px;
+        height: 205px;
     }
 }
 @media only screen and (max-width: 320px){

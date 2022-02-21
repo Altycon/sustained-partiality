@@ -39,7 +39,7 @@ function init(){
     calendarStart();
 
     
-    DOTS = createDots(300,document.querySelector('.canvas'));
+    DOTS = createDots(1000,document.querySelector('.canvas'));
 }
 
 document.addEventListener('DOMContentLoaded', init);
