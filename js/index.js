@@ -15,6 +15,16 @@ const setTertiearyCanvasSizes = ()=>{
     })
 };
 
+const setGameOfLifeCanvasSize = ()=>{
+    const canvasParent = document.querySelector('.gof-grid-container');
+    const parentDemension = canvasParent.getBoundingClientRect();
+    const parentWidth = parentDemension.width;
+    const ParentHeight = parentDemension.height;
+    const gameCanvas = document.getElementById('GameOfLifeCanvas');
+    gameCanvas.width = parentWidth;
+    gameCanvas.height = ParentHeight;
+}
+
 
 
 function addDesktopListeners(){
@@ -25,11 +35,13 @@ function addDesktopListeners(){
     addCircleEventListeners();
     attachStartButtonListeners(StartButtons);
     attachStopButtonListeners(StopButtons);
+    attachGameOfLifeButtonListeners();
 }
 
 function init(){
 
     setTertiearyCanvasSizes();
+    setGameOfLifeCanvasSize();
 
     CreateHomeBackground();
 
@@ -40,6 +52,8 @@ function init(){
 
     
     DOTS = createDots(1000,document.querySelector('.canvas'));
+
+    initializeGameOfLife();
 }
 
 document.addEventListener('DOMContentLoaded', init);

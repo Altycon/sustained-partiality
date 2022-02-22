@@ -1,0 +1,85 @@
+.game-of-life-container{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "info game";
+    box-shadow: 0 0 10px 5px hsl(0 0% 0% / .5);
+}
+.game-of-life-container::before{
+    content: "WENT TO SLEEP";
+    color: hsl(0 100% 100% / .5);
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsl(0 0% 0% / .7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-info-container{
+    grid-area: info;
+    padding: 1rem;;
+}
+.game-info-container h3 {
+    padding: 1rem;
+}
+.game-info-container p {
+    line-height: 1.5rem;
+}
+.gof-reference-container{
+    min-width: 200px;
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    border: solid 1px #fff;
+    padding: 1rem;
+}
+j.gof-reference-link{
+
+}
+.gof-reference-img-container{
+    width: 100px;
+    height: 75px;
+    border: 1px solid purple;
+}
+
+.game-container{
+    grid-area: game;
+    padding: 1rem;
+    border: 1px solid green;
+}
+.gof-button-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    border: 1px solid blue;
+    padding: 1rem;
+}
+.gof-button-container2{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid blue;
+    padding: 1rem;
+}
+.gof-button{
+    font-size: 1rem;
+    padding: .5rem;
+}
+
+.gof-grid-container{
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+#GameOfLifeCanvas{
+    /* width: 100%;
+    height: 100%; */
+    background-color: #fff;
+}

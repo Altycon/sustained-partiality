@@ -5,8 +5,6 @@ const StopButtons = document.querySelectorAll('.stop-button');
 const BackgroundCanvases = document.querySelectorAll('.background-canvas')
 const ForegroundCanvases = document.querySelectorAll('.foreground-canvas');
 
-let PatternGrid;
-
 const createDots = (totalDots, canvas)=> {
     let arr = [];
     for(let i = 0; i < totalDots; i++){
@@ -30,12 +28,6 @@ const renderDots = (ctx,dots)=>{
     for(let i = 0; i < dots.length; i++){
         renderDot(ctx, dots[i]);
     }
-}
-
-const createPatternGrid = (cols,rows)=>{
-    return new Array(cols).fill(null)
-        .map( ()=> new Array(rows).fill(null)
-        .map((_,i)=> i % 2 === 0 ? 0:1))
 }
 
 class Square{
@@ -75,9 +67,7 @@ class EqualateralTriangle{
         ctx.lineTo(this.x3, this.y3);
         ctx.closePath();
         ctx.fillStyle = this.color;
-        //ctx.strokeStyle = '#fff';
         ctx.fill();
-        //ctx.stroke();
     }
 }
 
@@ -100,13 +90,6 @@ const createSquares = (canvas,resolution)=>{
     return arr;
 }
 
-const renderShape = (ctx,grid)=>{
-    
-    for(let i = 0; i < grid.length; i++){
-        grid[i].render(ctx);
-    }
-}
-
 const createTriangles = (canvas,resolution)=>{
     let arr = [];
     const columns = canvas.width/resolution;
@@ -126,6 +109,11 @@ const createTriangles = (canvas,resolution)=>{
     return arr;
 }
 
+const renderShape = (ctx,grid)=>{
+    for(let i = 0; i < grid.length; i++){
+        grid[i].render(ctx);
+    }
+}
 
 const animationNA = (ctx)=> {
     ctx.font = '16px sans-serif';
@@ -136,88 +124,71 @@ const animationNA = (ctx)=> {
     ctx.fillText('AVAILABLE', ctx.canvas.width/2, ctx.canvas.height/2 + 16);
 }
 
-const startCanvasAnimation = (canvas) => {
-    
+const startPatternAnimation = (ev) => {
+    const backgroundCanvas = ev.target.parentNode.parentNode.querySelector('.background-canvas');
+    const foregroundCanvas = ev.target.parentNode.parentNode.querySelector('.foreground-canvas');
+    const canvasValue = backgroundCanvas.dataset.value;
+    const backCTX = backgroundCanvas.getContext('2d');
+    const foreCTX = foregroundCanvas.getContext('2d');
+
+    switch(canvasValue){
+        case "A":
+            renderDots(backCTX,DOTS);
+            renderDots(foreCTX,DOTS);
+            foregroundCanvas.style.animation = `rotateBackAndForth 5s linear 1s infinite`;
+            break;
+        case "B":
+            renderDots(backCTX,DOTS);
+            renderDots(foreCTX,DOTS);
+            foregroundCanvas.style.animation = `rotatedAndTranslateY 5s linear infinite`;
+            break;
+        case "C":
+            renderDots(backCTX,DOTS);
+            renderDots(foreCTX,DOTS);
+            foregroundCanvas.style.animation = `rotatedAndTranslateX 5s linear infinite`;
+            break;
+        case "D":
+            renderDots(backCTX,DOTS);
+            renderDots(foreCTX,DOTS);
+            foregroundCanvas.style.animation = `scaleRotation 5s linear infinite`;
+            break;
+        case "E":
+            renderDots(backCTX,DOTS);
+            renderDots(foreCTX,DOTS);
+            foregroundCanvas.style.animation = `scaledRotatedTranslated 10s linear infinite`;
+            break;
+        case "F":
+            const resolution = 3;
+            const SquareGrid = createSquares(backgroundCanvas,resolution);
+            log(SquareGrid)
+            renderShape(backCTX,SquareGrid);
+            renderShape(foreCTX,SquareGrid);
+            foregroundCanvas.style.animation = `rotateOnly 60s linear infinite`;
+            break;
+        case "G":
+            const size = 5;
+            const TriangleGrid = createTriangles(backgroundCanvas,size);
+            renderShape(backCTX,TriangleGrid);
+            renderShape(foreCTX,TriangleGrid);
+            foregroundCanvas.style.animation = `rotateOnly 60s linear infinite`;
+            //animationNA(backCTX);
+            break;
+    }
+}
+const stopPatternAnimation = (ev)=>{
+    const backgroundCanvas = ev.target.parentNode.parentNode.querySelector('.background-canvas');
+    const foregroundCanvas = ev.target.parentNode.parentNode.querySelector('.foreground-canvas');
+    backgroundCanvas.getContext('2d').clearRect(0,0,backgroundCanvas.width,backgroundCanvas.height);
+    foregroundCanvas.getContext('2d').clearRect(0,0,foregroundCanvas.width,foregroundCanvas.height);
+    foregroundCanvas.style.animation = "";
 }
 const attachStartButtonListeners = (buttons)=> {
     buttons.forEach( button => {
-        button.addEventListener('click', (ev)=>{
-            const backgroundCanvas = ev.target.parentNode.parentNode.querySelector('.background-canvas');
-            const foregroundCanvas = ev.target.parentNode.parentNode.querySelector('.foreground-canvas');
-            const canvasValue = backgroundCanvas.dataset.value;
-            const backCTX = backgroundCanvas.getContext('2d');
-            const foreCTX = foregroundCanvas.getContext('2d');
-
-            // add dots and then with animation delay
-            // add animation to foreground canvas rotation/translation etc.
-            //const DOTS = createDots(100,backgroundCanvas);
-            // renderDots(backCTX,DOTS);
-            // renderDots(foreCTX,DOTS);
-            //startCanvasAnimation()
-            switch(canvasValue){
-                case "A":
-                    renderDots(backCTX,DOTS);
-                    renderDots(foreCTX,DOTS);
-                    foregroundCanvas.style.animation = `rotateBackAndForth 5s linear 1s infinite`;
-                    break;
-                case "B":
-                    renderDots(backCTX,DOTS);
-                    renderDots(foreCTX,DOTS);
-                    foregroundCanvas.style.animation = `rotatedAndTranslateY 5s linear infinite`;
-                    break;
-                case "C":
-                    renderDots(backCTX,DOTS);
-                    renderDots(foreCTX,DOTS);
-                    foregroundCanvas.style.animation = `rotatedAndTranslateX 5s linear infinite`;
-                    break;
-                case "D":
-                    renderDots(backCTX,DOTS);
-                    renderDots(foreCTX,DOTS);
-                    foregroundCanvas.style.animation = `scaleRotation 5s linear infinite`;
-                    break;
-                case "E":
-                    renderDots(backCTX,DOTS);
-                    renderDots(foreCTX,DOTS);
-                    foregroundCanvas.style.animation = `scaledRotatedTranslated 10s linear infinite`;
-                    break;
-                case "F":
-                    const resolution = 3;
-                    const w = backgroundCanvas.width;
-                    const h = backgroundCanvas.height;
-                    // const cols = Math.floor(w/resolution);
-                    // const rows = Math.floor(h/resolution);
-                    // PatternGrid = createPatternGrid(cols,rows);
-
-                    const SquareGrid = createSquares(backgroundCanvas,resolution);
-                    log(SquareGrid)
-                    renderShape(backCTX,SquareGrid);
-                    renderShape(foreCTX,SquareGrid);
-                    foregroundCanvas.style.animation = `rotateOnly 60s linear infinite`;
-                    //log(resolution,w,h,cols,rows);
-                    //console.table(PatternGrid)
-                    break;
-                case "G":
-                    const size = 5;
-                    const TriangleGrid = createTriangles(backgroundCanvas,size);
-                    renderShape(backCTX,TriangleGrid);
-                    renderShape(foreCTX,TriangleGrid);
-                    foregroundCanvas.style.animation = `rotateOnly 60s linear infinite`;
-                    //log(TriangleGrid);
-                    //animationNA(backCTX);
-                    break;
-            }
-            
-        });
+        button.addEventListener('click', startPatternAnimation);
     });
 }
 const attachStopButtonListeners = (buttons)=>{
     buttons.forEach(button=>{
-        button.addEventListener('click', (ev)=>{
-            const backgroundCanvas = ev.target.parentNode.parentNode.querySelector('.background-canvas');
-            const foregroundCanvas = ev.target.parentNode.parentNode.querySelector('.foreground-canvas');
-            backgroundCanvas.getContext('2d').clearRect(0,0,backgroundCanvas.width,backgroundCanvas.height);
-            foregroundCanvas.getContext('2d').clearRect(0,0,foregroundCanvas.width,foregroundCanvas.height);
-            foregroundCanvas.style.animation = "";
-        });
+        button.addEventListener('click', stopPatternAnimation);
     });
 }

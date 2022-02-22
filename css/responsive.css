@@ -1,7 +1,7 @@
 
 
 
-@media only screen and (max-width: 760px){
+@media only screen and (max-width: 780px){
     /*  STYLES  */
     :root{
         --calendar-width: 90vw;
@@ -11,6 +11,12 @@
         border: 1px solid blue;
         width: 100%;
         height: 100%;
+    }
+    .game-of-life-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "game"
+                            "info";
     }
 }
 @media only screen and (max-width: 480px){
@@ -44,6 +50,10 @@
     .canvas-container{
         width: 205px;
         height: 205px;
+    }
+    .gof-grid-container{
+        width: 200px;
+        height: 200px;
     }
 }
 @media only screen and (max-width: 320px){

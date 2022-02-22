@@ -1,0 +1,20 @@
+
+- ./ add the game of life somewhere small with a restart button and a full screen button
+- use a single canvas to display the floating particles and the star field? not sure
+- add latest project section ?
+- add an ideas/thoughts section ?...
+- incorporate a dark/light mode button
+- I like the idea of the colors of the website changing depending on the time user visits site...
+-Consider adding a navigation menu...but to what? to where?
+
+- reconfigure all requestAnimationFrame calls to follow the correct time and update
+- add feedback button and a form for contact
+
+- add a clock somewhere? 
+-set Calendar fields as todays date.
+-consider where else to place or move the calendar. I'm glad I made it work but it probably should be so upfront for no
+    reason. I have considered using it as a way to connect to an api to practice make api calls but so far haven't come
+    across any interesting api's that aren't randomly generated. Even "fact" api's and history api's arent sorted by
+    fucking date! What the hell is that? I guess I could design my own api...or maybe use Wikipedia?
+    - an api sorted by date first, containing any inventions or discoveries known on that date.
+    
