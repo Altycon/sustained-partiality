@@ -1,5 +1,16 @@
 
 
+let GOF_CANVAS;
+let GOF_CANVAS_WIDTH;
+let GOF_CANVAS_HEIGHT;
+let GOF_CTX;
+let RESOLUTION;
+let COLUMNS;
+let ROWS;
+let GOF_GRID_ARRAY;
+let SavedGrid;
+let GameOfLifeInterval;
+
 // set the canvas size in the index.js file
 
 const createGrid = (columns,rows)=>{
@@ -46,7 +57,7 @@ const renderGameOfLifeGrid = (ctx,grid,size)=>{
 
             ctx.beginPath();
             ctx.rect(i * size, j * size, size, size);
-            ctx.strokeStyle = cell ? '#000':'#fff';
+            //ctx.strokeStyle = cell ? '#000':'#fff';
             ctx.fillStyle = cell ? '#fff':'#000';
             ctx.fill();
             ctx.stroke();
@@ -55,36 +66,116 @@ const renderGameOfLifeGrid = (ctx,grid,size)=>{
 }
 
 const startGameOfLifeAnimation = (ctx,grid,resolution,columns,rows)=>{
-    const c = columns;
-    const r = rows;
+    
     const animateGameOfLife = (time)=>{
         ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
 
-        grid = createNextGeneration(grid,c,r);
+        grid = createNextGeneration(grid,columns,rows);
         renderGameOfLifeGrid(ctx,grid,resolution);
         //log(time)
-        requestAnimationFrame(animateGameOfLife);
+        GameOfLifeInterval = requestAnimationFrame(animateGameOfLife);
     }
     animateGameOfLife();
 }
+const resetGameOfLife = (ctx,grid,resolution,columns,rows)=>{
+    cancelAnimationFrame(GameOfLifeInterval);
+    GameOfLifeInterval = undefined
+    grid = createGrid(columns,rows);
+    renderGameOfLifeGrid(ctx,grid,resolution);
+}
+const hideWrapperDisplayFullPage = (ev)=>{
+    document.getElementById('HomeBackgroundCanvas').style.display = 'none';
+    ev.target.classList.add('hidden');
+    document.querySelector('.fullPageContainer').classList.add('appear');
+    ev.target.style.animation = 'none';
+    ev.target.removeEventListener('animationend', hideWrapperDisplayFullPage)
+}
+
+let fullPageCanvas;
+let fpctx;
+let fpCanvasWidth;
+let fpCanvasHeight;
+let fullPageResolution;
+let fullPageColumns;
+let fullPageRows;
+
+let FullPageGrid;
+
+const createAndRenderNewGrid = ()=>{
+    fullPageCanvas = document.getElementById('FullPageCanvas');
+    fullPageCanvas.width = innerWidth;
+    fullPageCanvas.height = innerHeight;
+    fpctx = fullPageCanvas.getContext('2d');
+    fpCanvasWidth = fullPageCanvas.width;
+    fpCanvasHeight = fullPageCanvas.height;
+    fullPageResolution = 5;
+    fullPageColumns = Math.floor(fpCanvasWidth/fullPageResolution);
+    fullPageRows = Math.floor(fpCanvasHeight/fullPageResolution);
+    FullPageGrid = createGrid(fullPageColumns,fullPageRows);
+    renderGameOfLifeGrid(fpctx,FullPageGrid,fullPageResolution);
+}
+
+const applyButtonFunctions = (ev)=>{
+    const target = ev.target.getAttribute('id');
+    switch(target){
+        case 'FullPageStartGame':
+            startGameOfLifeAnimation(fpctx,FullPageGrid,fullPageResolution,fullPageColumns,fullPageRows);
+            break;
+        case 'FullPageResetGame':
+            resetGameOfLife(fpctx,FullPageGrid,fullPageResolution,fullPageColumns,fullPageRows);
+            break;
+        case 'FullPageCloseWindow':
+            document.querySelector('.fullPageContainer').classList.remove('appear');
+            const wrapper = document.querySelector('.page-wrapper');
+            wrapper.classList.remove('hidden');
+            wrapper.style.animation = 'fadeIn 1s linear forwards';
+            fpctx.clearRect(0,0,fpCanvasWidth,fpCanvasHeight);
+            FullPageGrid = null;
+            break;
+    }
+}
+const attachFullPageGameOfLifeListeners = ()=>{
+    const buttons = document.querySelectorAll('.full-page-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', applyButtonFunctions)
+    })
+}
+const removeFullPageGameOfLifeListeners = ()=>{
+    const buttons = document.querySelectorAll('.full-page-button');
+    buttons.forEach(button => {
+        button.removeEventListener('click', applyButtonFunctions)
+    })
+}
+const ExpandGameOfLifeFullScreen = ()=>{
+    const wrapper = document.querySelector('.page-wrapper');
+    wrapper.style.animation = 'fadeAway 1s linear forwards';
+    wrapper.addEventListener('animationend', hideWrapperDisplayFullPage);
+    attachFullPageGameOfLifeListeners();
+    createAndRenderNewGrid();
+}
+
+// const FullPageCloseButton = document.getElementById('FullPageCloseWindow');
+// FullPageCloseButton.addEventListener('click', (ev)=>{
+//     document.querySelector('.fullPageContainer').classList.remove('appear');
+//     const wrapper = document.querySelector('.page-wrapper');
+//     wrapper.classList.remove('hidden');
+//     wrapper.style.animation = 'fadeIn 1s linear forwards';
+
+// })
+
 
 const initializeGameOfLife = ()=>{
-    const GOF_CANVAS = document.getElementById('GameOfLifeCanvas');
-    const GOF_CANVAS_WIDTH = GOF_CANVAS.getBoundingClientRect().width;
-    const GOF_CANVAS_HEIGHT = GOF_CANVAS.getBoundingClientRect().height;
-    const GOF_CTX = GOF_CANVAS.getContext('2d');
-    const RESOLUTION = 5;
-    const COLUMNS = GOF_CANVAS_WIDTH/RESOLUTION;
-    const ROWS = GOF_CANVAS_HEIGHT/RESOLUTION;
+    GOF_CANVAS = document.getElementById('GameOfLifeCanvas');
+    GOF_CANVAS_WIDTH = GOF_CANVAS.getBoundingClientRect().width;
+    GOF_CANVAS_HEIGHT = GOF_CANVAS.getBoundingClientRect().height;
+    GOF_CTX = GOF_CANVAS.getContext('2d');
+    RESOLUTION = 5;
+    COLUMNS = GOF_CANVAS_WIDTH/RESOLUTION;
+    ROWS = GOF_CANVAS_HEIGHT/RESOLUTION;
     
+    GOF_GRID_ARRAY = createGrid(COLUMNS,ROWS);
     
-    let GOF_GRID_ARRAY = createGrid(COLUMNS,ROWS);
-    //console.table(GOF_GRID_ARRAY)
-    renderGameOfLifeGrid(GOF_CTX,GOF_GRID_ARRAY,RESOLUTION); // I should maybe do this with intersection observer or right away when page loads
-    //createNextGeneration(GOF_GRID_ARRAY,COLUMNS,ROWS);
-    //renderGrid(); ?
-
-    startGameOfLifeAnimation(GOF_CTX,GOF_GRID_ARRAY,RESOLUTION,COLUMNS,ROWS);
+    renderGameOfLifeGrid(GOF_CTX,GOF_GRID_ARRAY,RESOLUTION);
 }
 
 const attachGameOfLifeButtonListeners = ()=>{
@@ -95,19 +186,15 @@ const attachGameOfLifeButtonListeners = ()=>{
              const target = ev.target.dataset.value;
              switch(target){
                 case "start":
-                    //startGameOfLife();
+                    startGameOfLifeAnimation(GOF_CTX,GOF_GRID_ARRAY,RESOLUTION,COLUMNS,ROWS);
                     log(target)
                     break;
                 case "reset":
-                    //resetGameOfLife();
-                    log(target)
-                    break;
-                case "stop":
-                    //stopGameOfLife();
+                    resetGameOfLife(GOF_CTX,GOF_GRID_ARRAY,RESOLUTION,COLUMNS,ROWS);
                     log(target)
                     break;
                 case "expand":
-                    //expandGameOfLife();
+                    ExpandGameOfLifeFullScreen();
                     log(target)
                     break;
              };

@@ -32,10 +32,10 @@
 </head>
 <body>
 
-    <div class="stars-page">
+    <!-- <div class="stars-page">
         <canvas id="StarFieldCanvas"></canvas>
         <canvas id="SunCanvas"></canvas>
-    </div>
+    </div> -->
     
     <div class="page-wrapper">
         <header class="primary-header">
@@ -265,21 +265,21 @@
                     <div class="game-of-life-container">
 
                         <div class="game-info-container">
-                            <h3>Info title?</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quisquam facere consequatur!</p>
+                            <h3>Reference for interest</h3>
+                            <p>The Game of Life (a.k.a. Life) is a 'zero-player-game' created by the mathematician John Conway in 1970. Thank you to the HungryTurtleCode for helping me understand how to code this up. For a beginner, this code expanded my understanding of programming greatly.</p>
                             <div class="gof-reference-container">
                                 <p>Interview with John Conway</p>
-                                <a class="gof-reference-link" href="https://www.youtube.com/watch?v=R9Plq-D1gEk">
+                                <a class="gof-reference-link" href="https://www.youtube.com/watch?v=R9Plq-D1gEk" target="_blank">
                                     <div class="gof-reference-img-container">
-                                        <!-- Image or psuedo element background ? -->
+                                        <img class="gof-reference-img" src="img/jon-conway-numberphile_336-188.jpg" alt="Jon Conway on Numberphile">
                                     </div>
                                 </a>
                             </div>
                             <div class="gof-reference-container">
-                                <p>Where I initially learned this code</p>
-                                <a class="gof-reference-link" href="https://www.youtube.com/watch?v=deXzu0Eregs">
+                                <p>HungryTurtleCode</p>
+                                <a class="gof-reference-link" href="https://www.youtube.com/watch?v=deXzu0Eregs" target="_blank">
                                     <div class="gof-reference-img-container">
-                                        <!-- Image or psuedo element background ? -->
+                                        <img class="gof-reference-img" src="img/hungry-turtle.png" alt="Jon Conway on Numberphile">
                                     </div>
                                 </a>
                             </div>
@@ -289,7 +289,6 @@
                             <div class="gof-button-container">
                                 <button id="StartGameOfLifeButton" class="gof-button" type="button" data-value="start">Start</button>
                                 <button id="ResetGameOfLifeButton" class="gof-button" type="button" data-value="reset">Reset</button>
-                                <button id="StopGameOfLifeButton" class="gof-button" type="button" data-value="stop">Stop</button>
                             </div>
                             <div class="gof-grid-container">
                                 <canvas id="GameOfLifeCanvas"></canvas>
@@ -312,7 +311,14 @@
         </footer>
     </div>
 
-    
+    <div class="fullPageContainer">
+        <canvas id="FullPageCanvas"></canvas>
+        <div class="full-page-button-container">
+            <button id="FullPageStartGame" class="full-page-button" type="button">Start</button>
+            <button id="FullPageResetGame" class="full-page-button" type="button">Reset</button>
+            <button id="FullPageCloseWindow" class="full-page-button" type="button">Close</button>
+        </div>
+    </div>
 
     <script src="js/tools/tools.js"></script>
     <script src="js/tools/vector.js"></script>

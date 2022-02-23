@@ -5,9 +5,8 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "info game";
-    box-shadow: 0 0 10px 5px hsl(0 0% 0% / .5);
 }
-.game-of-life-container::before{
+/* .game-of-life-container::before{
     content: "WENT TO SLEEP";
     color: hsl(0 100% 100% / .5);
     font-size: 3rem;
@@ -21,10 +20,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 .game-info-container{
     grid-area: info;
-    padding: 1rem;;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
 }
 .game-info-container h3 {
     padding: 1rem;
@@ -45,27 +48,25 @@ j.gof-reference-link{
 
 }
 .gof-reference-img-container{
-    width: 100px;
-    height: 75px;
-    border: 1px solid purple;
+    width: 150px;
 }
-
+.gof-reference-img{
+    width: 100%;
+    
+}
 .game-container{
     grid-area: game;
     padding: 1rem;
-    border: 1px solid green;
 }
 .gof-button-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    border: 1px solid blue;
     padding: 1rem;
 }
 .gof-button-container2{
     display: flex;
     justify-content: space-around;
-    border: 1px solid blue;
     padding: 1rem;
 }
 .gof-button{
@@ -82,4 +83,38 @@ j.gof-reference-link{
     /* width: 100%;
     height: 100%; */
     background-color: #fff;
+}
+
+/*  This sits at the very bottom of html page outside the "page-wrapper" */
+
+.fullPageContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: none;
+}
+#FullPageCanvas{
+    width: 100vw;
+    height: 100vh;
+}
+.fullPageContainer.appear{
+    display: block;
+}
+.full-page-button-container{
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 15vh;
+    background: hsl(0 0% 0% / .7);
+    border: 1px solid hsl(0 100% 100% / .3);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.full-page-button{
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
 }

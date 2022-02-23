@@ -18,6 +18,7 @@ let HomeAnimationRequest;
 
 function createCanvas(){
     const canvas = document.createElement('canvas');
+    canvas.setAttribute('id','HomeBackgroundCanvas');
     canvas.width = document.body.getBoundingClientRect().width;
     canvas.height = document.body.getBoundingClientRect().height;
     canvas.style.position = 'absolute';

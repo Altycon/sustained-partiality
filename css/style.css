@@ -66,6 +66,27 @@ body{
 }
 .page-wrapper{
     display: block;
+    opacity: 1;
+}
+.page-wrapper.hidden{
+    display: none;
+    opacity: 0;
+}
+@keyframes fadeAway {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 main{
     width: 100vw;
@@ -121,3 +142,5 @@ footer{
     align-items: center;
     justify-content: space-evenly;
 }
+
+
