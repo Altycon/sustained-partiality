@@ -1,10 +1,13 @@
 .game-of-life-container{
     position: relative;
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "info game";
+    background: var(--myGradient);
+    margin: 0 auto;
+    border-radius: 10px;
 }
 /* .game-of-life-container::before{
     content: "WENT TO SLEEP";
@@ -72,6 +75,14 @@ j.gof-reference-link{
 .gof-button{
     font-size: 1rem;
     padding: .5rem;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 2px hsl(0 0% 0% / .7);
+    box-shadow: 2px 2px 2px hsl(0 0% 0% / .5);
 }
 
 .gof-grid-container{

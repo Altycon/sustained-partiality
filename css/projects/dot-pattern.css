@@ -1,6 +1,6 @@
 .patterns-scroller{
     --pattern-scroller-spacing: 3rem;
-    --pattern-scroller-fontSize: clamp(10px, 2.5vw, 1rem);
+    --pattern-scroller-fontSize: clamp(1rem, 2.5vw, 1.2rem);
     width: 90vw;
     height: 80vh;
     margin: 0 auto;
@@ -57,6 +57,9 @@
     color: var(--text-color1);
     font-size: var(--pattern-scroller-fontSize);
     cursor: pointer;
+    font-weight: 700;
+    text-shadow: 0 0 2px hsl(0 0% 0% / .7);
+    box-shadow: 2px 2px 2px hsl(0 0% 0% / .5);
 }
 .canvas-container{
     position: relative;

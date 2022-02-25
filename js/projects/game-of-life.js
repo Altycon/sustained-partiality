@@ -69,10 +69,8 @@ const startGameOfLifeAnimation = (ctx,grid,resolution,columns,rows)=>{
     
     const animateGameOfLife = (time)=>{
         ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
-
         grid = createNextGeneration(grid,columns,rows);
         renderGameOfLifeGrid(ctx,grid,resolution);
-        //log(time)
         GameOfLifeInterval = requestAnimationFrame(animateGameOfLife);
     }
     animateGameOfLife();
@@ -154,16 +152,6 @@ const ExpandGameOfLifeFullScreen = ()=>{
     createAndRenderNewGrid();
 }
 
-// const FullPageCloseButton = document.getElementById('FullPageCloseWindow');
-// FullPageCloseButton.addEventListener('click', (ev)=>{
-//     document.querySelector('.fullPageContainer').classList.remove('appear');
-//     const wrapper = document.querySelector('.page-wrapper');
-//     wrapper.classList.remove('hidden');
-//     wrapper.style.animation = 'fadeIn 1s linear forwards';
-
-// })
-
-
 const initializeGameOfLife = ()=>{
     GOF_CANVAS = document.getElementById('GameOfLifeCanvas');
     GOF_CANVAS_WIDTH = GOF_CANVAS.getBoundingClientRect().width;
@@ -187,15 +175,12 @@ const attachGameOfLifeButtonListeners = ()=>{
              switch(target){
                 case "start":
                     startGameOfLifeAnimation(GOF_CTX,GOF_GRID_ARRAY,RESOLUTION,COLUMNS,ROWS);
-                    log(target)
                     break;
                 case "reset":
                     resetGameOfLife(GOF_CTX,GOF_GRID_ARRAY,RESOLUTION,COLUMNS,ROWS);
-                    log(target)
                     break;
                 case "expand":
                     ExpandGameOfLifeFullScreen();
-                    log(target)
                     break;
              };
         });
