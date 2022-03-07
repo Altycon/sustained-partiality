@@ -1,4 +1,10 @@
 
+        Do this asap
+- fix height of "pattern-scroller" sections for Desktop. The amount of text per
+section is messing the height up: maybe set to 80vh?
+
+        Do this sometime
+
 - try to add a new piece of art each day and place old in/on new page
     -try to organize the hell out of that code...
     

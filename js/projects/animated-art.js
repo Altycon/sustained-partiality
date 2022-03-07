@@ -8,8 +8,6 @@ const setArtCanvas = ()=>{
     canvas.width = ParentWidth;
     canvas.height = ParentHeight;
 }
-// also set in index.js
-window.addEventListener('resize',setArtCanvas);
 
 let artDisplayInterval;
 const NUMBER_OF_WALKERS = 500;
