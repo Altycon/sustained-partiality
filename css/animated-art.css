@@ -1,0 +1,57 @@
+
+.art-display-container{
+    width: 90vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    color: var(--text-color1);
+    border-radius: 10px;
+}
+.art-display-container h3{
+    text-transform: uppercase;
+    padding: 1rem;
+}
+.art-canvas-container{
+    width: 90vw;
+    height: 80vh;
+    background: #000;
+}
+#ArtCanvas{
+    /* No error */
+}
+.art-extra-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+}
+.art-extra-container::before{
+    content: "NO LINKS YET AVAILABLE";
+    position: absolute;
+    top:0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsl(0 0% 0% / .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: .8rem;
+    text-align: center;
+}
+.art-extra-info{
+    padding: 0 1rem;
+    color: var(--text-color2);
+}
+#MoreArtButton{
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 2px hsl(0 0% 0% /.3);
+    background: transparent;
+    border-radius: 5px;
+    color: var(--text-color2);
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}

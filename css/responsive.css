@@ -3,14 +3,18 @@
 
 @media only screen and (max-width: 780px){
     /*  STYLES  */
-    :root{
-        --calendar-width: 90vw;
-        --calendar-height: 66vh;
-    }
+    
     .simulation-display{
         border: 1px solid blue;
         width: 100%;
         height: 100%;
+    }
+    .patterns-scroller{
+        --pattern-scroller-spacing: 2rem;
+        /* --pattern-scroller-fontSize: 0.8rem; */
+        grid-auto-columns: 100%;
+        width: 90vw;
+        height: 70vh;
     }
     .game-of-life-container{
         grid-template-columns: 1fr;
@@ -21,9 +25,10 @@
 }
 @media only screen and (max-width: 480px){
     /*  STYLES  */
-    :root{
-        --calendar-width: 90vw;
-        --calendar-height: 33vh;
+    .art-extra-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
     }
     .words{
         display: flex;

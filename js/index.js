@@ -2,6 +2,7 @@
 // Any variable which needs to be initialized right away or before something else
 let DOTS;
 
+
 const setTertiearyCanvasSizes = ()=>{
     const canvasParent = document.querySelector('.canvas-container');
     const parentDemension = canvasParent.getBoundingClientRect();
@@ -40,6 +41,7 @@ function addDesktopListeners(){
 
 function init(){
 
+    setArtCanvas();
     setTertiearyCanvasSizes();
     setGameOfLifeCanvasSize();
 
@@ -47,9 +49,9 @@ function init(){
 
 
     addDesktopListeners()
-    
-    calendarStart();
 
+    // This should probably be started and stopped with intersection observer;
+    startArtDisplay();
     
     DOTS = createDots(1000,document.querySelector('.canvas'));
 
