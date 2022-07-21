@@ -12,6 +12,7 @@ const setArtCanvas = ()=>{
 let artDisplayInterval;
 const NUMBER_OF_WALKERS = 500;
 
+
 class Walker{
     constructor(x,y){
         this.position = new Vector(x,y);
@@ -54,17 +55,22 @@ const createWalkers = (num,width,height)=>{
     }
     return arr;
 }
-
+const EndTime = 500;
+let timer = 0;
 const animateArtDisplay = (ctx,walkers)=>{
     const len = walkers.length;
 
     const animateArt = ()=>{
-
-        for(let i = 0; i < len; i++){
-            walkers[i].update(ctx);
-            walkers[i].render(ctx);
+        if(timer >= EndTime){
+            artDisplayInterval = cancelAnimationFrame(animateArt);
+        }else{
+            for(let i = 0; i < len; i++){
+                walkers[i].update(ctx);
+                walkers[i].render(ctx);
+            }
+            timer++;
+            artDisplayInterval = requestAnimationFrame(animateArt);
         }
-        artDisplayInterval = requestAnimationFrame(animateArt);
     }
     animateArt();    
 }
