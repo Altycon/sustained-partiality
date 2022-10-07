@@ -1,5 +1,5 @@
 
-const url = "./sendInfo";
+const url = "/sendInfo";
 const info = {id: 3458345734898345, data: "Something to recieve"};
 const xhr = new XMLHttpRequest();
 xhr.open("POST", url, true);
