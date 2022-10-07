@@ -1,11 +1,4 @@
 
-const url = "./sendInfo";
-const info = {id: 3458345734898345, data: "Something to recieve"};
-const xhr = new XMLHttpRequest();
-xhr.open("POST", url, true);
-xhr.setRequestHeader("Content-type", "application/json");
-xhr.send(info);
-
 // Any variable which needs to be initialized right away or before something else
 let DOTS;
 
